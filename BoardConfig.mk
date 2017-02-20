@@ -103,7 +103,8 @@ MR_INIT_DEVICES := $(BOARD_PATH)/multirom/mr_init_devices.c
 MR_KEXEC_MEM_MIN := 0x00200000
 MR_KEXEC_DTB := true
 MR_DEVICE_HOOKS := $(BOARD_PATH)/multirom/mr_hooks.c
-MR_DEVICE_HOOKS_VER := 4
+MR_DEVICE_HOOKS_VER := 1
+#MR_DEVICE_HOOKS_VER := 4
 MR_DEVICE_VARIANTS := hydrogen helium
 MR_USE_QCOM_OVERLAY := true
 MR_QCOM_OVERLAY_HEADER := $(BOARD_PATH)/multirom/mr_qcom_overlay.h
@@ -118,7 +119,7 @@ MR_DEV_BLOCK_BOOTDEVICE := true
 MR_POPULATE_BY_NAME_PATH := "/dev/block/platform/soc.0/7824900.sdhci/by-name"
 
 # Versioning
-TW_DEVICE_VERSION := 2
+TW_DEVICE_VERSION := 3
 
 include $(BOARD_PATH)/multirom/version/MR_REC_VERSION.mk
 
