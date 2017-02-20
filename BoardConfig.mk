@@ -117,3 +117,13 @@ MR_DEV_BLOCK_BOOTDEVICE := true
 #Force populating from the emmc
 MR_POPULATE_BY_NAME_PATH := "/dev/block/platform/soc.0/7824900.sdhci/by-name"
 
+# Versioning
+TW_DEVICE_VERSION := 2
+
+include $(BOARD_PATH)/multirom/version/MR_REC_VERSION.mk
+
+ifeq ($(MR_REC_VERSION),)
+MR_REC_VERSION := $(shell date -u +%Y%m%d)-01
+endif
+
+BOARD_MKBOOTIMG_ARGS += --board mrom$(MR_REC_VERSION)
